@@ -1,23 +1,3 @@
-# termkit
-
-tui development kit using crossterm
-
-## usage
-
-`Cargo.toml`
-
-```toml
-termkit = { git = "https://github.com/TundraClimate/termkit" }
-```
-
-## features
-
-- `EventThread`  
-Event listener running in a separate thread
-<details>
-<summary>Example</summary>
-
-```rs
 use crossterm::event::{Event, KeyCode, KeyEventKind};
 use std::error::Error;
 use termkit::EventThread;
@@ -44,6 +24,3 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     Ok(())
 }
-```
-
-</details>
