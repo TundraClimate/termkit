@@ -9,6 +9,7 @@ use termkit::{render, EventThread};
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
     let mut ev = EventThread::spawn();
+    termkit::enable_tui()?;
 
     loop {
         let (_, rows) = terminal::size()?;
@@ -28,6 +29,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
             }
         }
     }
+
+    termkit::disable_tui()?;
 
     Ok(())
 }
